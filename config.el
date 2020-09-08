@@ -61,6 +61,10 @@ doom-variable-pitch-font (font-spec :family "Open Sans Hebrew" :size 14))
 
 (add-hook 'vterm-mode-hook 'vterm-font-face)
 
+;; Don't show encoding in mode line
+(setq
+ doom-modeline-buffer-encoding 'nil
+ +modeline-encoding 'nil)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
