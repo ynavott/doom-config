@@ -89,3 +89,9 @@ doom-variable-pitch-font (font-spec :family "Open Sans Hebrew" :size 14))
   ;; so I just setq t0 at the start and unbind it here.
   (makunbound 't0)
   (message "spent %.3fs in config.el" elapsed))
+
+;;; Misc. Package options
+(setq
+;; Set projectile project folder path
+projectile-project-search-path '("~/Projects/")
+)
