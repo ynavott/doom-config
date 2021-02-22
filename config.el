@@ -21,6 +21,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
+;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq doom-font (font-spec :family "Fira Code" :size 14)
 doom-variable-pitch-font (font-spec :family "Open Sans Hebrew" :size 14))
 
@@ -83,15 +85,15 @@ doom-variable-pitch-font (font-spec :family "Open Sans Hebrew" :size 14))
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;;; Misc. Package options
+(setq
+;; Set projectile project folder path
+projectile-project-search-path '("~/Projects")
+)
+
 ;;; Config performance measure
 (let ((elapsed (float-time (time-subtract (current-time) t0))))
   ;; I don't wanna encase this whole file in "(let ((t0 ...)))"
   ;; so I just setq t0 at the start and unbind it here.
   (makunbound 't0)
   (message "spent %.3fs in config.el" elapsed))
-
-;;; Misc. Package options
-(setq
-;; Set projectile project folder path
-projectile-project-search-path '("~/Projects/")
-)
